@@ -27,6 +27,8 @@
 \goldman@tabularfalse
 \newif\ifgoldman@semibold
 \goldman@semiboldfalse
+\newif\ifgoldman@condensed
+\goldman@condensedfalse
 \newif\ifgoldman@usefilenames
 \goldman@usefilenamestrue
 \newif\ifgoldman@realscripts
@@ -42,6 +44,9 @@
 \DeclareOptionX{semibold}[true]{\@nameuse{goldman@semibold#1}}
 \DeclareOptionX{sb}[true]{\@nameuse{goldman@semibold#1}}
 \DeclareOptionX{bold}[true]{\@nameuse{if#1}\goldman@semiboldfalse\else\goldman@semiboldtrue\fi}
+
+\DeclareOptionX{condensed}[true]{\@nameuse{goldman@condensed#1}}
+\DeclareOptionX{c}[true]{\@nameuse{goldman@condensed#1}}
 
 \DeclareOptionX{realscripts}[true]{\@nameuse{goldman@realscripts#1}}
 
@@ -66,6 +71,13 @@
    \def\goldman@boldstyle{Bd} 
 \fi
 
+\ifgoldman@condensed
+   \def\goldman@width{Cd}
+   \def\goldman@boldstyle{Bd}
+\else
+   \def\goldman@width{}
+\fi   
+
 \ifgoldman@realscripts
    \RequirePackage{realscripts}
 \fi
@@ -81,101 +93,30 @@
 \setsansfont{GoldmanSans}[ 
    RawFeature     = {\goldman@figurealign},
    Scale          = \goldman@scale,
-   UprightFont    = *_Rg,
+   UprightFont    = *\goldman@width_Rg,
    ItalicFont     = *_It,
-   SlantedFont    = *_Rg,
+   SlantedFont    = *\goldman@width_Rg,
    SlantedFeatures= {FakeSlant=0.2},
-   BoldFont       = *_\goldman@boldstyle,
-   %BoldFeatures   = { SmallCapsFont = *-\goldman@boldstyle },
+   BoldFont       = *\goldman@width_\goldman@boldstyle,
    BoldItalicFont = *_\goldman@boldstyle It,
-   %BoldItalicFeatures = { SmallCapsFont = *-\goldman@boldstyle Italic },
-   %BoldSlantedFont= *-\goldman@boldstyle,
-   %BoldSlantedFeatures= {FakeSlant=0.2, SmallCapsFont = *-\goldman@boldstyle },
-   %SmallCapsFont  = *-Regular,
-   %SmallCapsFeatures={RawFeature=+smcp},
-   FontFace       = {k}{n}{*_Blk},
+   BoldSlantedFont= *\goldman@width_\goldman@boldstyle,
+   BoldSlantedFeatures= {FakeSlant=0.2},
    FontFace       = {c}{n}{*Cd_Rg},
    FontFace       = {bc}{n}{*Cd_Bd},
-   FontFace       = {l}{n}{*_Lt},
    FontFace       = {ul}{n}{*_Th},
+   FontFace       = {l}{n}{*_Lt},
+   FontFace       = {sb}{n}{*_Md},
+   FontFace       = {k}{n}{*_Blk},
    Extension      = .ttf  
 ]
 \strongfontdeclare{\bfseries,\fontseries{k}\selectfont}
 
-%\newfontfamily{\GoldmanSansMd}{GoldmanSans}[%
-%   RawFeature     = {\goldman@figurealign},
-%   Scale          = \goldman@scale,
-%   UprightFont    = *_Rg,
-%   ItalicFont     = *_It,
-%   %ItalicFeatures = { SmallCapsFont = *-Italic },
-%   %SlantedFont    = *-Regular,
-%   %SlantedFeatures= {FakeSlant=0.2},
-%   BoldFont       = *_Md, 
-%   %BoldFeatures   = { SmallCapsFont = *-Semibold },
-%   BoldItalicFont = *_MdIt,
-%   %BoldItalicFeatures = { SmallCapsFont = *-SemiboldItalic },
-%   BoldSlantedFont= *_Md,
-%   %BoldSlantedFeatures = {FakeSlant=0.2, SmallCapsFont = *-Semibold },
-%   %SmallCapsFont  = *-Regular,
-%   %SmallCapsFeatures={RawFeature=+smcp},
-%   Extension      = .ttf  
-%   ]
-%
-%\newfontfamily{\GoldmanSansBlk}{GoldmanSans}[%
-%   RawFeature     = {\goldman@figurealign},
-%   Scale          = \goldman@scale,
-%   UprightFont    = *_Rg,
-%   ItalicFont     = *_It,
-%   %ItalicFeatures = { SmallCapsFont = *-Italic },
-%   %SlantedFont    = *-Regular,
-%   %SlantedFeatures= {FakeSlant=0.2},
-%   BoldFont       = *_Blk, 
-%   %BoldFeatures   = { SmallCapsFont = *-Semibold },
-%   BoldItalicFont = *_BdIt,
-%   %BoldItalicFeatures = { SmallCapsFont = *-SemiboldItalic },
-%   BoldSlantedFont= *_Bd,
-%   %BoldSlantedFeatures = {FakeSlant=0.2, SmallCapsFont = *-Semibold },
-%   %SmallCapsFont  = *-Regular,
-%   %SmallCapsFeatures={RawFeature=+smcp},
-%   Extension      = .ttf  
-%]
-%
-%\newfontfamily{\GoldmanSansLt}{GoldmanSans}[%
-%   RawFeature     = {\goldman@figurealign},
-%   Scale          = \goldman@scale,
-%   UprightFont    = *_Lt,
-%   ItalicFont     = *_It,
-%   %ItalicFeatures = { SmallCapsFont = *-Italic },
-%   %SlantedFont    = *-Regular,
-%   %SlantedFeatures= {FakeSlant=0.2},
-%   BoldFont       = *_Md, 
-%   %BoldFeatures   = { SmallCapsFont = *-Semibold },
-%   BoldItalicFont = *_MdIt,
-%   %BoldItalicFeatures = { SmallCapsFont = *-SemiboldItalic },
-%   BoldSlantedFont= *_Md,
-%   %BoldSlantedFeatures = {FakeSlant=0.2, SmallCapsFont = *-Semibold },
-%   %SmallCapsFont  = *-Regular,
-%   %SmallCapsFeatures={RawFeature=+smcp},
-%   Extension      = .ttf  
-%]
-%
-%\newfontfamily{\GoldmanSansTh}{GoldmanSans}[%
-%   RawFeature     = {\goldman@figurealign},
-%   Scale          = \goldman@scale,
-%   UprightFont    = *_Th,
-%   ItalicFont     = *_It,
-%   %ItalicFeatures = { SmallCapsFont = *-Italic },
-%   %SlantedFont    = *-Regular,
-%   %SlantedFeatures= {FakeSlant=0.2},
-%   BoldFont       = *_Md, 
-%   %BoldFeatures   = { SmallCapsFont = *-Semibold },
-%   BoldItalicFont = *_MdIt,
-%   %BoldItalicFeatures = { SmallCapsFont = *-SemiboldItalic },
-%   BoldSlantedFont= *_Md,
-%   %BoldSlantedFeatures = {FakeSlant=0.2, SmallCapsFont = *-Semibold },
-%   %SmallCapsFont  = *-Regular,
-%   %SmallCapsFeatures={RawFeature=+smcp},
-%   Extension      = .ttf  
-%]
+\newcommand{\goldmansansTf}{\normalfont\addfontfeatures{RawFeature={-pnum;+tnum}}}
+\newcommand{\goldmansansTh}{\normalfont\fontseries{ul}\selectfont}
+\newcommand{\goldmansansLt}{\normalfont\fontseries{l}\selectfont}
+\newcommand{\goldmansansSb}{\normalfont\fontseries{sb}\selectfont}
+\newcommand{\goldmansansBlk}{\normalfont\fontseries{k}\selectfont}
+\newcommand{\goldmansansCd}{\normalfont\fontseries{c}\selectfont}
+\newcommand{\goldmansansfrac}{\normalfont\addfontfeatures{Fractions=On}}
 
 \renewcommand{\familydefault}{\sfdefault}

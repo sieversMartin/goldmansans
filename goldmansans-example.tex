@@ -1,5 +1,5 @@
 % !TeX TS-program = lualatex
-%% goldmansansexample.tex
+%% goldmansans-example.tex
 %% Copyright 2020 Martin Sievers
 %
 % This work may be distributed and/or modified under the
@@ -28,21 +28,25 @@
    
    \textsl{Test} vs. \textit{Test}
    
-   {\fontseries{bc}\selectfont Test}
+   {\goldmansansCd Test}
 
-   {\fontseries{c}\selectfont Test}
+   {\goldmansansCd\bfseries Test}
 
-   {\fontseries{k}\selectfont Test}   
+   {\goldmansansBlk Test}   
    
-   {\fontseries{l}\selectfont Test}   
+   {\goldmansansLt Test}   
    
-   {\fontseries{ul}\selectfont Test}   
+   {\goldmansansTh Test}   
+
+   {\goldmansansSb Test}   
    
    {Test \strong{Test \strong{Test}}}
    
    ff fi fj ffi ffj ij vs. {\addfontfeatures{Ligatures=NoCommon}ff fi fj ffi ffj ij}
    
-   1/2 und 3/6 vs. {\addfontfeatures{Fractions=On} 1/2 und 3/6}
+   {\goldmansansfrac These are fractions: 1/2 and 3/6} vs. These are not fractions: 1/2 and 3/6
    
    Test\textsuperscript{2} vs. Test\textsuperscript*{2}
+   
+   1 2 3 4 5 6 7 8 9 0 vs. {\goldmansansTf 1 2 3 4 5 6 7 8 9 0}
 \end{document}
