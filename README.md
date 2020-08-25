@@ -17,7 +17,7 @@ It supports the following 11 font variants:
 * Condensed
 * Condensed Bold
 
-There are options for switching between `bold` and `semibold` as well as between `proportional` and `tabular` figures. Moreover the package supports an easy access to the OpenType features `sups`/`subs` and `frac`.
+There are options for switching between `bold` and `semibold` as well as between `proportional` and `tabular` figures. Moreover the package supports an easy access to the different font shapes and series as well as to the OpenType features `sups`/`subs` and `frac`.
 
 ## Installation
 
@@ -29,11 +29,12 @@ Please note, that the fonts themselfes are _not_ included. They have to be downl
 
 * Install package and font files (see above)
 * Add `\usepackage{goldmansans}` to your preamble
+* Pick appropriate options if necessary and add font switches as needed
 * Run your document with `lualatex` or `xelatex`
 
 ## Contributions
 
-Feel free to raise an [GitHub issue](https://github.com/sieversMartin/goldmansans/issues). [Pull requests](https://github.com/sieversMartin/goldmansans/pulls) are also welcome.
+Feel free to raise a [GitHub issue](https://github.com/sieversMartin/goldmansans/issues). [Pull requests](https://github.com/sieversMartin/goldmansans/pulls) are also welcome.
 
 ## Licensing
 
@@ -43,4 +44,4 @@ See [LICENSE](LICENSE) for more details.
 
 ## Acknowledgements
 
-Thanks to @hvoss49 for his `libertinus-otf` package, which inspired me.
+Thanks to @hvoss49 for his `libertinus-otf` package, which inspired the structure of my package.
