@@ -9,7 +9,7 @@ It supports the following 11 font variants:
 * Light
 * Regular 
 * Regular Italic
-* Medium (Semibold)
+* Medium (Semi Bold)
 * Medium Italic
 * Bold
 * Bold Italic
