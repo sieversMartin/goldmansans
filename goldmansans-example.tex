@@ -1,0 +1,28 @@
+% !TeX TS-program = lualatex
+
+\documentclass{article}
+\usepackage[]{goldmansans}
+\usepackage{blindtext}
+\begin{document}
+   \blinddocument
+   
+   \textsl{Test} vs. \textit{Test}
+   
+   {\fontseries{bc}\selectfont Test}
+
+   {\fontseries{c}\selectfont Test}
+
+   {\fontseries{k}\selectfont Test}   
+   
+   {\fontseries{l}\selectfont Test}   
+   
+   {\fontseries{ul}\selectfont Test}   
+   
+   {Test \strong{Test \strong{Test}}}
+   
+   ff fi fj ffi ffj ij vs. {\addfontfeatures{Ligatures=NoCommon}ff fi fj ffi ffj ij}
+   
+   1/2 und 3/6 vs. {\addfontfeatures{Fractions=On} 1/2 und 3/6}
+   
+   Test\textsuperscript{2} vs. Test\textsuperscript*{2}
+\end{document}
