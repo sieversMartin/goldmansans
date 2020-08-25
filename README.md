@@ -25,6 +25,12 @@ Until there is no CTAN release (or in case you want to use a development version
 
 Please note, that the fonts themselfes are _not_ included. They have to be downloaded separatly from https://design.gs.com/d/design-system/foundation/typography/ and have to be installed either in one of your system's font directories or one of the TeX trees or in your working directory.
 
+## Usage
+
+* Install package and font files (see above)
+* Add `\usepackage{goldmansans}` to your preamble
+* Run your document with `lualatex` or `xelatex`
+
 ## Contributions
 
 Feel free to raise an [GitHub issue](https://github.com/sieversMartin/goldmansans/issues). [Pull requests](https://github.com/sieversMartin/goldmansans/pulls) are also welcome.
