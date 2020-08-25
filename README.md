@@ -21,7 +21,7 @@ There are options for switching between `bold` and `semibold` as well as between
 
 ## Installation
 
-Until there is no CTAN release (or in case you want to use a development version), just copy `goldmansans.sty` to a place TeX can find it, e.g. one of your TEXMF trees or your working directory.
+Until there is a CTAN release (or in case you want to use a development version), just copy `goldmansans.sty` to a place LaTeX can find it, e.g. one of your TEXMF trees or your working directory.
 
 Please note, that the fonts themselfes are _not_ included. They have to be downloaded separatly from https://design.gs.com/d/design-system/foundation/typography/ and have to be installed either in one of your system's font directories or one of the TeX trees or in your working directory.
 
